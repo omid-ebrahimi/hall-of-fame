@@ -15,7 +15,7 @@ function AppScreen({ componentId }): JSX.Element {
     const [backRequested, setBackRequested] = useBackHandler(componentId);
     useEffect(() => {
         if (backRequested && slider) {
-            const index = Math.abs(currentIndex + 1 - slides.length);
+            const index = (currentIndex + 1 + slides.length) % slides.length;
             slider.goToSlide(index);
             setCurrentIndex(index);
             setBackRequested(false);
