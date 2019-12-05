@@ -12,6 +12,7 @@ import com.reactnativenavigation.react.NavigationReactNativeHost;
 import com.reactnativenavigation.react.ReactGateway;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
+import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
 
 public class MainApplication extends NavigationApplication {
 
@@ -41,6 +42,7 @@ public class MainApplication extends NavigationApplication {
         // Add additional packages you require here
         // No need to add RnnPackage and MainReactPackage
         return Arrays.asList(
+            new AsyncStoragePackage(),
             new VectorIconsPackage(),
             new RNGestureHandlerPackage()
         );

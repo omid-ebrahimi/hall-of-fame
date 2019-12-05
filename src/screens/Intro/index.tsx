@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import AppIntroSlider from 'react-native-app-intro-slider';
+import { useAsyncStorage } from '@react-native-community/async-storage';
 import Slide from './Slide';
 import { setRootAppStack } from '../../navigation';
 
@@ -25,6 +26,16 @@ const slides = [
 ];
 
 function IntroScreen(): JSX.Element {
+    const { getItem, setItem } = useAsyncStorage('launchedBefore');
+    useEffect(() => {
+        getItem().then(launchedBefore => {
+            if (launchedBefore) {
+                return setRootAppStack();
+            }
+            return setItem('Yes');
+        });
+    }, [getItem, setItem]);
+
     return <AppIntroSlider slides={slides} renderItem={Slide} onDone={setRootAppStack} />;
 }
 
