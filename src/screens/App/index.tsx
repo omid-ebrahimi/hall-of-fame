@@ -4,8 +4,9 @@ import AppIntroSlider from 'react-native-app-intro-slider';
 import { setRootAppStack } from '../../navigation';
 import Welcome from './Welcome';
 import Slide from './Slide';
+import FameList from './FameList';
 
-const slides = [Welcome];
+const slides = [Welcome, FameList];
 
 function AppScreen(): JSX.Element {
     return (
