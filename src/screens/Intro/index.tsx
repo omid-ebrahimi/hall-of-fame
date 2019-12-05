@@ -29,10 +29,7 @@ function IntroScreen(): JSX.Element {
     const { getItem, setItem } = useAsyncStorage('launchedBefore');
     useEffect(() => {
         getItem().then(launchedBefore => {
-            if (launchedBefore) {
-                return setRootAppStack();
-            }
-            return setItem('Yes');
+            launchedBefore ? setRootAppStack() : setItem('Yes');
         });
     }, [getItem, setItem]);
 
