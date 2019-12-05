@@ -1,6 +1,7 @@
 import React from 'react';
 import AppIntroSlider from 'react-native-app-intro-slider';
 import Slide from './Slide';
+import { setRootAppStack } from '../../navigation';
 
 const slides = [
     {
@@ -24,7 +25,7 @@ const slides = [
 ];
 
 function IntroScreen(): JSX.Element {
-    return <AppIntroSlider renderItem={Slide} slides={slides} onDone={(): void => {}} />;
+    return <AppIntroSlider slides={slides} renderItem={Slide} onDone={setRootAppStack} />;
 }
 
 export default IntroScreen;
