@@ -1,0 +1,11 @@
+export { Headline } from './Headline';
+export { Headline2 } from './Headline2';
+export { Headline3 } from './Headline3';
+export { Headline4 } from './Headline4';
+export { Body } from './Body';
+export { Body2 } from './Body2';
+export { Subtitle1 } from './Subtitle1';
+export { Subtitle2 } from './Subtitle2';
+export { Subtitle3 } from './Subtitle3';
+export { Subtitle4 } from './Subtitle4';
+export { Subtitle5 } from './Subtitle5';
